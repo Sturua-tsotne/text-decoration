@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-origin: padding-box;
+}
+/* cursor  */
+body {
+  cursor: url(cuesor.svg), auto;
+  background-color: black;
+}
+.cursor {
+  cursor: none;
+  z-index: 99;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 255, 255);
+  position: absolute;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  animation: cursorAnim 0.5s infinite alternate;
+}
+.cursor::after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  border: 8px solid rgb(51, 51, 51);
+  border-radius: 50%;
+  opacity: 0.5;
+  top: -8px;
+  left: -8px;
+  animation: cursorAnim2 0.5s infinite alternate;
+}
+@keyframes cursorAnim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.7);
+  }
+}
+@keyframes cursorAnim2 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.4);
+  }
+}
+@keyframes cursorAnim3 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.expand {
+  animation: cursorAnim3 0.5s forwards;
+  border: 1px solid red;
+}
+/* body {
+  cursor: url("/cuesor.svg"), auto;
+} */
+header,
+footer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+.paper-plane {
+  position: absolute;
+  height: 100px;
+  margin-top: 50%;
+  left: 0%;
+}
+header h1 {
+  color: white;
+  font-size: 4rem;
+  font-family: sans-serif;
+  text-align: center;
+  /* line-height: 100vh; */
+}
+.text {
+  opacity: 0;
+  transition: all 0.5s ease;
+  transform: translateY(50px);
+  display: inline-block;
+}
+span.fade {
+  opacity: 1;
+  transform: translateY(0px);
+  background: linear-gradient(to right, #f32170, #ffeb07, #ff00eb);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.section1 h1 {
+  text-align: center;
+  font-size: 6rem;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #f32170, #ffeb07, #ff00eb);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+/*ტექსტის მონიშვნა */
+
+.fade::-moz-selection {
+  background:  #a3ff9166;
+}
+.fade::selection {
+  background: #a3ff9166;
+}
+.fade::-moz-selection {
+  color: #00000066;
+  text-shadow: -4px -2px 0px rgb(255, 255, 255);
+  box-shadow: -1px -1px rgb(255, 255, 255);
+}
+.fade::selection {
+  color: #00000066;
+  text-shadow: -4px -2px 0px rgb(255, 255, 255);
+  box-shadow: -1px -1px rgb(255, 255, 255);
+}
